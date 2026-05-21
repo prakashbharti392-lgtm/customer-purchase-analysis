@@ -66,3 +66,26 @@ st.bar_chart(avg_data)
 
 st.markdown("---")
 st.success("Project by: Data Science Intern | Tools: Python, Pandas, Matplotlib, Streamlit")
+
+st.markdown("---")
+st.header("📝 Project Code")
+
+code = '''
+import streamlit as st
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv('Custermors.csv')
+
+# Basic Stats
+col1, col2, col3 = st.columns(3)
+col1.metric("Total Customers", len(df))
+col2.metric("Total Purchase", f"Rs. {df['Purchase_Amount'].sum():,}")
+col3.metric("Avg Purchase", f"Rs. {int(df['Purchase_Amount'].mean())}")
+
+# City wise analysis
+city_data = df.groupby('City')['Purchase_Amount'].sum()
+st.bar_chart(city_data)
+'''
+
+st.code(code, language='python')
