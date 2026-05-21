@@ -9,7 +9,7 @@ st.title("🛍️ Customer Purchase Analysis Dashboard")
 st.markdown("---")
 
 # Data load karo
-df = pd.read_csv(r'C:\Users\HP\OneDrive\Desktop\Custermors.csv')
+df = pd.read_csv('Custermors.csv')
 
 # Basic Stats
 st.header("📊 Basic Statistics")
